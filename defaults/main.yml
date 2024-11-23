@@ -1,0 +1,3 @@
+---
+# defaults file for roles/ssh_connect_config
+ansible_user_id: "vagrant"

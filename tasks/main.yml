@@ -1,0 +1,13 @@
+---
+# tasks file for roles/ssh_connect_config
+- name: Generate SSH key
+  openssh_keypair:
+    path: "/home/{{ ansible_user_id }}/.ssh/id_rsa"
+    type: rsa
+    size: 4096
+    state: present
+    force: no
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0700
+    
