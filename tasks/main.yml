@@ -1,0 +1,15 @@
+---
+# tasks file for user_create
+- name: Create user
+  user: 
+    name: "{{ remote_ansible_user }}"
+    shell: /bin/bash
+    groups: sudo
+    append: yes
+    password: "{{ remote_ansible_user_password | password_hash('sha512') }}"
+
+- name: Add user to sudoers
+  copy:
+    dest: /etc/sudoers.d/{{ remote_ansible_user }}
+    content: "{{ remote_ansible_user }} ALL=(ALL) NOPASSWD: ALL"
+  become: yes

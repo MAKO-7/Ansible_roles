@@ -1,0 +1,4 @@
+---
+# defaults file for user_create
+remote_ansible_user: "ansible"
+remote_ansible_user_password: "ansible"
