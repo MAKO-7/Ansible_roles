@@ -1,3 +1,4 @@
 ---
 # defaults file for roles/ssh_key_deploy
-ansible_user_id: "ansible"
+remote_user_id: "ansible"
+local_user_id: "vagrant"
